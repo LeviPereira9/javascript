@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        #caixa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+            border: 1px solid green;
+            width: 225px;
+            height: 55px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa">
+        Interaja
+    </div>
+    <script>
+        var a = window.docDument.getElementById('caixa');
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        
+        function clicar() {
+            a.innerText = 'Clicou'
+        }
+        function entrar() {
+            a.innerText='Mouse dentro da caixa!'
+        }
+
+        function sair() {
+            a.innerText='Mouse saiu da caixa!'
+        }
+    </script>
+</body>
+</html>

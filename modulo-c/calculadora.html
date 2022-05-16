@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio do Guanabas</title>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="num1" id="i_num1">
+    <input type="number" name="num2" id="i_num2">
+    <input type="button" value="Somar" onclick="somar()">
+
+    <div id="resul" onclick="somar()">Resultado: </div>
+
+    <script>
+        function somar() {
+            var i_num1 = window.document.getElementById("i_num1");
+            var i_num2 = window.document.getElementById("i_num2");
+
+            var n1 = Number(i_num1.value)
+            var n2 = Number(i_num2.value)
+            var s = n1 + n2
+
+            var resul = window.document.getElementById("resul")
+            resul.innerText = `O resultado é ${s}`
+
+        }
+    </script>
+</body>
+</html>

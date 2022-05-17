@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Simples e Composta</title>
+    <style>
+
+        div#multas, div#gringo {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border: 1px solid black;
+            background-color: lightgray;
+            width: 200px;
+            padding: 10px 0px 10px 10px;
+            border-radius: 5px;
+        }
+        
+        label {
+            padding-bottom: 5px;
+        }
+
+        div#res_mul, div#res_gringo {
+            padding: 15px;
+            border: 1px solid black;
+            background-color: aliceblue;
+            width: 350PX;
+            height: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    
+    <div id="multas">
+        <form action="#" method="get" id="multa_form" name="for_multa">
+        
+            <label for="m_nome">Estrada: </label>
+            <input type="text" name="nome" id="m_estrada">
+        
+            <br>
+            <label for="m_tel">Placa</label>
+            <input type="text" name="telefone" id="m_placa" pattern="[A-Z]{4}-[0-9]{3}" placeholder="AAAA-000">
+            <br>
+            <label for="m_km">Velocidade registrada:</label>
+            <input type="number" name="multa" id="m_km" >
+            <br>
+            <input type="button" value="Enviar" onclick="registrar()">
+        
+        </form>
+        <div id="res_mul">
+            <h1>Multa:</h1>
+            <p id="resultado"></p>
+        </div>
+    </div>
+
+    <hr>
+    
+    <h1>Sistema de Visto</h1>
+
+    <div id="gringo">
+
+        <form action="#" method="get">
+
+            <label for="g_name">Nome completo:</label>
+            <input type="text" name="nome" id="g_name">
+            <br>
+
+            <label for="g_naciolidade">Nacionalidade</label>
+<!--             <input list="g_nacionalidade">
+            <datalist id="g_nacionalidade">
+                <option value="EUA">Estados Unidos da America</option>
+                <option value="BR">BR</option>
+                <option value="URSS">União das Repúblicas Socialistas Soviéticas</option>
+                <option value="ARG">Argentina</option>
+                <option value="ARM">Armênia</option>
+                <option value="AUS">Austrália</option>
+                <option value="BEL">Bélgica</option>
+            </datalist> -->
+            <input type="text" name="nacio" id="g_naciolidade" pattern="[A-Z]" placeholder="BR, URSS, EUA, etc...">
+
+
+            <br>
+
+            <input type="button" value="Enviar" onclick="gringo()">
+
+
+        </form>
+
+        <div id="res_gringo">
+            <h1>Visto:</h1>
+            <p id="g_resultado"></p>
+        </div>
+
+    </div>
+
+    <script>
+
+        
+        
+        
+        function registrar() {
+            var estrada = window.document.getElementById("m_estrada").value
+            var placa = window.document.getElementById("m_placa").value
+            var km = window.document.getElementById("m_km").value
+            var p1 = window.document.getElementById("resultado")
+
+            if (km>60) {
+                p1.innerHTML = `A velocidade registrada na ${estrada} foi ${km-60} Km/h, acima do permitido. O carro com a placa ${placa}, será multado!`
+            }
+
+        }
+
+        function gringo() {
+            var nome = window.document.getElementById("g_name").value
+            var nacio = window.document.getElementById("g_naciolidade").value
+            var p2 = window.document.getElementById("g_resultado")
+
+            if (nacio == "BR") {
+                p2.innerHTML = `Bem vindo, ${nome}, sua nacionalidade está registrada como ${nacio}, por isso sua passagem para o Brasil foi liberada automaticamente. `
+            } 
+
+            else {
+                p2.innerHTML = `Bem vindo, ${nome}, sua nacionalidade está registrada  como ${nacio}, por isso sua passagem para o Brasil está sendo revisada, por favor, espere no saguão ao lado.`
+            }
+                
+
+        }
+
+
+    </script>
+
+</body>
+</html>

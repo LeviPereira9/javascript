@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Verificador de Idade</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+
+    <div id="container">
+        <main>
+            <section id="sec01">
+                <form action="#" method="get">
+
+                    <label for="i_ano">Ano de Nascimento:</label>
+                    <input type="number" name="ano" id="i_ano" pattern="[0-9]{4}" placeholder="1978">
+
+                    <br>
+
+                    <label for="#">Sexo:</label>
+                    <input type="radio" name="genero" id="g_mas">
+                    <label for="g_mas">Masculino</label>
+                    <input type="radio" name="genero" id="g_fem">
+                    <label for="g_fem">Feminino</label>
+
+                    <br>
+
+                    <input type="button" value="Enviar" style="font-size: 14px;" onclick="enviar()">
+
+                    
+                </form>
+            </section>
+            
+            <hr>
+            
+            <section id="sec02">
+                <p id="msg">Preencha os dados acima para ver o resultado!</p>
+                <br>
+                <!-- <img src="" alt="Fases da vida"> -->
+
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>
+        <strong>&copy; <a href="https://www.cursoemvideo.com/" target="_blank" rel="author">CursoemVideo</a></strong>
+        </p>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -10,17 +10,33 @@
 <body>
     
     <header>
-        <h1>Tema</h1>
+        <h1>Vamos contar</h1>
     </header>
 
     <div id="container">
         <main>
             <section id="sec01">
-            <p>Olá!</p>
+            
+                <form action="#" method="get">
+                    <label for="inicio">Inicio:</label>
+                    <input type="number" name="f_inicio" id="inicio"> <br>
+
+                    <label for="fim">Fim:</label>
+                    <input type="number" name="f_fim" id="fim"> <br>
+
+                    <label for="passo">Passo:</label>
+                    <input type="number" name="f_passo" id="passo"> <br>
+
+
+                    <input type="button" value="Contar" id="contar" onclick="somar()">
+
+
+                </form>
+
             </section>
             
             <section id="sec02">
-                <p id="msg">resul</p>
+                <p id="msg">Preparando a contagem... </p>
             </section>
         </main>
     </div>

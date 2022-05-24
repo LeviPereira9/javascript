@@ -10,7 +10,7 @@
 <body>
     
     <header>
-        <h1>Vamos contar</h1>
+        <h1>Tabuada</h1>
     </header>
 
     <div id="container">
@@ -18,17 +18,10 @@
             <section id="sec01">
             
                 <form action="#" method="get">
-                    <label for="inicio">Inicio:</label>
-                    <input type="number" name="f_inicio" id="inicio"> <br>
+                    <label for="inicio">Número: </label>
+                    <input type="number" name="f_inicio" id="num"> <br>
 
-                    <label for="fim">Fim:</label>
-                    <input type="number" name="f_fim" id="fim"> <br>
-
-                    <label for="passo">Passo:</label>
-                    <input type="number" name="f_passo" id="passo"> <br>
-
-
-                    <input type="button" value="Contar" onclick="somar()">
+                    <input type="button" value="Contar" onclick="multiplicar()">
 
 
                 </form>
@@ -36,7 +29,9 @@
             </section>
             
             <section id="sec02">
-                <p id="msg">Preparando a contagem... </p>
+            <select name="tabuada" id="tabu" size="10"></select>
+
+
             </section>
         </main>
     </div>

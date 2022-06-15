@@ -42,6 +42,6 @@ function finalizar() {
         let tot = valores.length
 
         res.innerHTML = ''
-        res.innerHTML += 
+        res.innerHTML += 1
     }
 }
